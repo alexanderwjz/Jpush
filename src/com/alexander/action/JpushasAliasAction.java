@@ -1,53 +1,52 @@
 package com.alexander.action;
-import com.alexanderwjz.serviceimpl.JpushAll;
-import com.alexanderwjz.serviceimpl.JpushAllImplService;
+
+import com.alexanderwjz.servicepushAsAlias.JpushAsAlias;
+import com.alexanderwjz.servicepushAsAlias.JpushAsAliasImplService;
+import com.alexanderwjz.utils.Encodingutf8;
 import com.opensymphony.xwork2.ActionSupport;
-
-/*import cn.jiguang.common.ServiceHelper;
-import cn.jiguang.common.connection.NativeHttpClient;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import cn.jiguang.common.ClientConfig;
-import cn.jiguang.common.resp.APIConnectionException;
-import cn.jiguang.common.resp.APIRequestException;
-import cn.jpush.api.JPushClient;
-import cn.jpush.api.push.PushResult;
-import cn.jpush.api.push.model.Message;
-import cn.jpush.api.push.model.Platform;
-import cn.jpush.api.push.model.PushPayload;
-import cn.jpush.api.push.model.audience.Audience;*/
 	/**
 	 * 
 	 * @author alexanderwjz
 	 * @email wjz@largedata.win
 	 * @Function 极光消息之自定义消息推送
 	 */
-public class JpushAction extends ActionSupport {
+public class JpushasAliasAction extends ActionSupport {
 	/*protected static final Logger LOG = LoggerFactory.getLogger(JpushAction.class);
 	protected static final String APP_KEY = "c484cb39c93483e223e5942e";
 	protected static final String MASTER_SECRET = "98fcdef43e044848a8f139a0";
 	*/
-	private static  String message;
 	private static final long serialVersionUID = 1L;
-	
-	public static String getMessage() {
-		return message;
+	private  String usernameAsalias;
+	private static String UserDefinedMessage;
+
+	public String getUsernameAsalias() {
+		return usernameAsalias;
 	}
+
+	public void setUsernameAsalias(String usernameAsalias) {
+		this.usernameAsalias = usernameAsalias;
+	}
+
+	public static String getUserDefinedMessage() {
+		return UserDefinedMessage;
+	}
+
 	@SuppressWarnings("static-access")
-	public void setMessage(String message) {
-		this.message = message;
+	public  void setUserDefinedMessage(String userDefinedMessage) {
+		this.UserDefinedMessage = Encodingutf8.getNewString(userDefinedMessage);
 	}
+	 // UserDefinedMessage = Encodingutf8.getNewString(userDefinedMessage);
+
 	// @Override
-	public String PushMessage() throws Exception {
-		try{
-			System.out.println("JpushAction"+getMessage());
-		JpushAllImplService ss=new JpushAllImplService();
-		JpushAll proxy=ss.getJpushAllImplPort();
-		proxy.push(getMessage());
+	public String PushMessagealias() throws Exception {
+		try {
+			System.out.println("usernameAsalias="+getUsernameAsalias()   +"UserDefinedMessage" +getUserDefinedMessage());
+			JpushAsAliasImplService jas=new JpushAsAliasImplService();
+			JpushAsAlias proxy=jas.getJpushAsAliasImplPort();
+			proxy.push(getUsernameAsalias(), getUserDefinedMessage());
 			return SUCCESS;
-		}catch(Exception e){
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return ERROR;
 		}
