@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body> 
     	
-    	<form action="${pageContext.request.contextPath}/PushUserDefined.action ">
+    	<form action="${pageContext.request.contextPath}/PushUserDefined.action" method="post">
         <label>推送的别名</label>
         <input name="usernameAsalias"/><br />
         <span>请输入自定义消息</span><br />
