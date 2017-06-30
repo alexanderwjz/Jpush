@@ -1,1 +1,1 @@
-# Jpush
+这是一个极光推送的实例，调用自己的webService做的web程序测试。
