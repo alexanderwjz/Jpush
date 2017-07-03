@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>push complex type的 Java 类。
+ * <p>pushAllNotice complex type的 Java 类。
  * 
  * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
- * &lt;complexType name="push">
+ * &lt;complexType name="pushAllNotice">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "push", propOrder = {
+@XmlType(name = "pushAllNotice", propOrder = {
     "arg0"
 })
-public class Push {
+public class PushAllNotice {
 
     protected String arg0;
 

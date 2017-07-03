@@ -1,6 +1,6 @@
 package com.alexander.action;
-import com.alexanderwjz.serviceimpl.JpushAll;
-import com.alexanderwjz.serviceimpl.JpushAllImplService;
+import com.alexanderwjz.serviceimpl.Jpush;
+import com.alexanderwjz.serviceimpl.JpushImplService;
 import com.opensymphony.xwork2.ActionSupport;
 
 /*import cn.jiguang.common.ServiceHelper;
@@ -43,9 +43,9 @@ public class JpushAction extends ActionSupport {
 	public String PushMessage() throws Exception {
 		try{
 			System.out.println("JpushAction"+getMessage());
-		JpushAllImplService ss=new JpushAllImplService();
-		JpushAll proxy=ss.getJpushAllImplPort();
-		proxy.push(getMessage());
+		JpushImplService ss=new JpushImplService();
+		Jpush proxy=ss.getJpushImplPort();
+		proxy.pushAllNotice(getMessage());
 			return SUCCESS;
 		}catch(Exception e){
 			e.printStackTrace();

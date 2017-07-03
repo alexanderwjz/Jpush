@@ -1,7 +1,6 @@
 package com.alexander.action;
-
-import com.alexanderwjz.servicepushAsAlias.JpushAsAlias;
-import com.alexanderwjz.servicepushAsAlias.JpushAsAliasImplService;
+import com.alexanderwjz.serviceimpl.Jpush;
+import com.alexanderwjz.serviceimpl.JpushImplService;
 import com.alexanderwjz.utils.Encodingutf8;
 import com.opensymphony.xwork2.ActionSupport;
 	/**
@@ -33,17 +32,16 @@ public class JpushasAliasAction extends ActionSupport {
 
 	@SuppressWarnings("static-access")
 	public  void setUserDefinedMessage(String userDefinedMessage) {
-		this.UserDefinedMessage = Encodingutf8.getNewString(userDefinedMessage);
+		this.UserDefinedMessage = userDefinedMessage;
 	}
-	 // UserDefinedMessage = Encodingutf8.getNewString(userDefinedMessage);
-
+	//Encodingutf8.getNewString(userDefinedMessage)
 	// @Override
 	public String PushMessagealias() throws Exception {
 		try {
 			System.out.println("usernameAsalias="+getUsernameAsalias()   +"UserDefinedMessage" +getUserDefinedMessage());
-			JpushAsAliasImplService jas=new JpushAsAliasImplService();
-			JpushAsAlias proxy=jas.getJpushAsAliasImplPort();
-			proxy.push(getUsernameAsalias(), getUserDefinedMessage());
+			JpushImplService ss=new JpushImplService();
+			Jpush proxy=ss.getJpushImplPort();
+			proxy.pushAsAliasUdM(getUsernameAsalias(), getUserDefinedMessage());
 			return SUCCESS;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

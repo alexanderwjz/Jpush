@@ -24,8 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Push_QNAME = new QName("http://service.alexanderwjz.com/", "push");
-    private final static QName _PushResponse_QNAME = new QName("http://service.alexanderwjz.com/", "pushResponse");
+    private final static QName _PushAllNotice_QNAME = new QName("http://service.alexanderwjz.com/", "pushAllNotice");
+    private final static QName _PushAsAliasUdMResponse_QNAME = new QName("http://service.alexanderwjz.com/", "pushAsAliasUdMResponse");
+    private final static QName _PushAllNoticeResponse_QNAME = new QName("http://service.alexanderwjz.com/", "pushAllNoticeResponse");
+    private final static QName _PushAsAliasUdM_QNAME = new QName("http://service.alexanderwjz.com/", "pushAsAliasUdM");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.alexanderwjz.service
@@ -35,37 +37,71 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PushResponse }
+     * Create an instance of {@link PushAsAliasUdM }
      * 
      */
-    public PushResponse createPushResponse() {
-        return new PushResponse();
+    public PushAsAliasUdM createPushAsAliasUdM() {
+        return new PushAsAliasUdM();
     }
 
     /**
-     * Create an instance of {@link Push }
+     * Create an instance of {@link PushAsAliasUdMResponse }
      * 
      */
-    public Push createPush() {
-        return new Push();
+    public PushAsAliasUdMResponse createPushAsAliasUdMResponse() {
+        return new PushAsAliasUdMResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Push }{@code >}}
+     * Create an instance of {@link PushAllNoticeResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://service.alexanderwjz.com/", name = "push")
-    public JAXBElement<Push> createPush(Push value) {
-        return new JAXBElement<Push>(_Push_QNAME, Push.class, null, value);
+    public PushAllNoticeResponse createPushAllNoticeResponse() {
+        return new PushAllNoticeResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PushResponse }{@code >}}
+     * Create an instance of {@link PushAllNotice }
      * 
      */
-    @XmlElementDecl(namespace = "http://service.alexanderwjz.com/", name = "pushResponse")
-    public JAXBElement<PushResponse> createPushResponse(PushResponse value) {
-        return new JAXBElement<PushResponse>(_PushResponse_QNAME, PushResponse.class, null, value);
+    public PushAllNotice createPushAllNotice() {
+        return new PushAllNotice();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link PushAllNotice }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.alexanderwjz.com/", name = "pushAllNotice")
+    public JAXBElement<PushAllNotice> createPushAllNotice(PushAllNotice value) {
+        return new JAXBElement<PushAllNotice>(_PushAllNotice_QNAME, PushAllNotice.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link PushAsAliasUdMResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.alexanderwjz.com/", name = "pushAsAliasUdMResponse")
+    public JAXBElement<PushAsAliasUdMResponse> createPushAsAliasUdMResponse(PushAsAliasUdMResponse value) {
+        return new JAXBElement<PushAsAliasUdMResponse>(_PushAsAliasUdMResponse_QNAME, PushAsAliasUdMResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link PushAllNoticeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.alexanderwjz.com/", name = "pushAllNoticeResponse")
+    public JAXBElement<PushAllNoticeResponse> createPushAllNoticeResponse(PushAllNoticeResponse value) {
+        return new JAXBElement<PushAllNoticeResponse>(_PushAllNoticeResponse_QNAME, PushAllNoticeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link PushAsAliasUdM }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.alexanderwjz.com/", name = "pushAsAliasUdM")
+    public JAXBElement<PushAsAliasUdM> createPushAsAliasUdM(PushAsAliasUdM value) {
+        return new JAXBElement<PushAsAliasUdM>(_PushAsAliasUdM_QNAME, PushAsAliasUdM.class, null, value);
     }
 
 }
