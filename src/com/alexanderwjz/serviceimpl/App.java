@@ -7,7 +7,7 @@ public class App {
 		JpushImplService jim=new JpushImplService();
 		Jpush proxy=jim.getJpushImplPort();
 		proxy.pushAllNotice("ÄãºÃ");
-		proxy.pushAsAliasUdM("test", "123");;
+		proxy.pushAsAliasUdM("lab", "123");;
 		
 	}
 
